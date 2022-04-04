@@ -1,6 +1,8 @@
 *.iml
 .gradle
 /local.properties
+/.idea
+/.idea/gradle.xml
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -13,3 +15,27 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# IntelliJ
+out/
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+.idea/gradle.xml
+.idea/misc.xml
+
+# Gradle and Maven with auto-import
+# When using Gradle or Maven with auto-import, you should exclude module files,
+# since they will be recreated, and may cause churn.  Uncomment if using
+# auto-import.
+.idea/artifacts
+.idea/compiler.xml
+.idea/jarRepositories.xml
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+*.iml
+*.ipr
+./idea/
+.idea/

@@ -2,15 +2,14 @@ package com.example.introandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.time.Duration;
-
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText editTextUser;
     private EditText editTextPass;
@@ -33,20 +32,27 @@ public class MainActivity extends AppCompatActivity {
 
                 boolean passwordIsOK = checkPassword(pass);
                 if(passwordIsOK){
-                    Toast.makeText(MainActivity.this, "Hola " + user + ", your password is OK!!!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Hola " + user + ", your password is OK!!!", Toast.LENGTH_LONG).show();
+                    changeNextScreen();
+                } else{
+                    Toast.makeText(LoginActivity.this, "Hola " + user + ", your password is NOT SECURE!!!!", Toast.LENGTH_LONG).show();
                 }
-                Toast.makeText(MainActivity.this, "Hola " + user + ", your password is NOT SECURE!!!!", Toast.LENGTH_LONG).show();
+
             }
         });
     }
 
     public boolean checkPassword(String password){
-
         if (password.length() >= 5){
-            Toast.makeText(MainActivity.this, "TRUE", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "TRUE", Toast.LENGTH_LONG).show();
             return true;
         }
-        Toast.makeText(MainActivity.this, "FALSE", Toast.LENGTH_LONG).show();
+        Toast.makeText(LoginActivity.this, "FALSE", Toast.LENGTH_LONG).show();
         return false;
+    }
+
+    public void changeNextScreen(){
+        Intent intent = new Intent(LoginActivity.this, TicTacToeActivity.class);
+        startActivity(intent);
     }
 }
