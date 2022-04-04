@@ -12,6 +12,7 @@ public class InitialActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private Button btnGame;
+    private Button btnProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class InitialActivity extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.btnLogin);
         btnGame = findViewById(R.id.btnTicTacToe);
+        btnProfile = findViewById(R.id.btnProfile);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,13 @@ public class InitialActivity extends AppCompatActivity {
             }
         });
 
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(InitialActivity.this, "PROFILE", Toast.LENGTH_SHORT).show();
+                goToProfileActivity();
+            }
+        });
     }
 
     public void goToLoginActivity(){
@@ -48,4 +57,10 @@ public class InitialActivity extends AppCompatActivity {
         Intent intent = new Intent(InitialActivity.this, TicTacToeActivity.class);
         startActivity(intent);
     }
+
+    public void goToProfileActivity(){
+        Intent intent = new Intent(InitialActivity.this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
 }
